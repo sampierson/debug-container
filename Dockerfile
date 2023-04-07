@@ -20,7 +20,9 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 RUN apt-get update && apt-get install -y google-cloud-cli
 
-# GCP cloud-sql-proxy
-
 # Postgres
 RUN apt-get install -y postgresql-client
+
+# GCP cloud-sql-proxy
+RUN curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.1.2/cloud-sql-proxy.linux.amd64
+RUN chmod +x /root/cloud-sql-proxy
