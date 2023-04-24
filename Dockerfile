@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     # build-essential
 
 # Networking
-RUN apt-get install -y net-tools dnsutils iputils-ping traceroute curl
+RUN apt-get install -y net-tools dnsutils iputils-ping traceroute curl ssh
 
 # gcloud requires python3
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends software-properties-common
